@@ -219,7 +219,7 @@ function App() {
     throw new Error('Max retries reached. Failed to fetch flight offers.');
   };
 
-
+ 
 
   const fetchFlights = async (destinationId) => {
     try {
