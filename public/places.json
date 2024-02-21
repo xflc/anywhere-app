@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "1",
+      "type": "Feature",
+      "properties": {
+        "title": "Maldives",
+        "description": "Known for its stunning overwater bungalows, clear blue waters, and romantic sunsets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.5434, 3.2028]
+      }
+    },
+    {
+      "id": "2",
+      "type": "Feature",
+      "properties": {
+        "title": "Santorini, Greece",
+        "description": "Famous for its picturesque white-washed buildings, cliffside views, and romantic ambiance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.4284, 36.3932]
+      }
+    },
+    {
+      "id": "3",
+      "type": "Feature",
+      "properties": {
+        "title": "Paris, France",
+        "description": "The City of Love with its iconic landmarks, charming streets, and world-class cuisine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3522, 48.8566]
+      }
+    },
+    {
+      "id": "4",
+      "type": "Feature",
+      "properties": {
+        "title": "Hawaii, USA",
+        "description": "Diverse landscapes, beautiful beaches, and opportunities for adventure"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.8583, 21.3069]
+      }
+    },
+    {
+      "id": "5",
+      "type": "Feature",
+      "properties": {
+        "title": "Bali, Indonesia",
+        "description": "Lush landscapes, stunning beaches, rich culture, and luxurious resorts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.1889, -8.4095]
+      }
+    },
+    {
+      "id": "6",
+      "type": "Feature",
+      "properties": {
+        "title": "Amalfi Coast, Italy",
+        "description": "Dramatic coastline, colorful villages, and delicious cuisine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [14.6119, 40.6340]
+      }
+    },
+    {
+      "id": "7",
+      "type": "Feature",
+      "properties": {
+        "title": "Seychelles",
+        "description": "Pristine beaches, crystal-clear waters, and luxurious resorts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [55.4915, -4.6796]
+      }
+    },
+    {
+      "id": "8",
+      "type": "Feature",
+      "properties": {
+        "title": "Tahiti and Bora Bora, French Polynesia",
+        "description": "Breathtaking scenery, overwater bungalows, and vibrant marine life"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-149.4068, -17.6797]
+      }
+    },
+    {
+      "id": "9",
+      "type": "Feature",
+      "properties": {
+        "title": "Kyoto, Japan",
+        "description": "Stunning temples, serene gardens, and traditional ryokan accommodations"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7681, 35.0116]
+      }
+    },
+    {
+      "id": "10",
+      "type": "Feature",
+      "properties": {
+        "title": "Costa Rica",
+        "description": "Lush rainforests, pristine beaches, and diverse wildlife"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.7534, 9.7489]
+      }
+    }
+  ]
+}
