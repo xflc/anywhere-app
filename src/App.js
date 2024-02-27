@@ -7,8 +7,8 @@ import Sidebar from './Sidebar';
 //import DateRangePickerWrapper from './DateRange'
 import DateRangePicker from 'flowbite-datepicker/DateRangePicker';
 import Datepicker from "react-tailwindcss-datepicker";
-import { Threebox } from 'threebox-plugin'; 
-
+import { Threebox } from 'threebox-plugin';
+import RightSideBar from './components/RightSideBar';
 
 function App() {
   const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
@@ -20,10 +20,7 @@ function App() {
   const [searchClicked, setSearchClicked] = useState(false); // Track whether search button is clicked
 
   const [endDate, setEndDate] = useState('');
-  //   const [startDateObj, setStartDateObj] = useState({
-  //     startDate: new Date(),
-  //     endDate: new Date().setMonth(11)
-  // });
+
   const startDateObj = {
     startDate: startDate,
     endDate: endDate
@@ -75,15 +72,15 @@ function App() {
 
 
 
-    		// randomly generate some line arcs (not essential for understanding this demo)
-		
+    // randomly generate some line arcs (not essential for understanding this demo)
+
 
 
 
 
 
     map.on('load', () => {
-      
+
 
       var lines = [];
 
@@ -113,159 +110,96 @@ function App() {
 
 
 
-
-
-
-          // places.forEach(function (place) {
-          //   map.addLayer({
-          //     'id': 'places-' + place.properties.title,
-          //     'type': 'symbol',
-          //     'source': 'places',
-          //     'layout': {
-          //       'icon-image': 'pin', // Mapbox marker icon
-          //       'icon-allow-overlap': true,
-          //       'text-allow-overlap': true,
-          //       'icon-size': 0.02,
-          //       'icon-offset': [0, 0],
-          //     },
-          //     'paint': {}
-          //   });
-          // });
-
-
           places.forEach(function (place) {
             var coordinates = place.geometry.coordinates;
             setSelectedPin(place)
 
             var arcSegments = 150;
-        
-        
-              var line = [];
-              var destination = coordinates;
-              var maxElevation = Math.pow(Math.abs(destination[0]*destination[1]), 0.5) * 60000;
-        
-              var increment = [(destination[0] - lisbon_coor[0])/arcSegments,(destination[1]-lisbon_coor[1])/arcSegments]// destination.map(function(direction){
-              // 	return (direction)/arcSegments;
-              // })
-        
-              for (var l = 0; l<=arcSegments; l++){
-                var waypoint = [lisbon_coor[0]+increment[0] * l,lisbon_coor[1]+increment[1] * l]
-        
-                var waypointElevation = Math.sin(Math.PI*l/arcSegments) * maxElevation;
-        
-                waypoint.push(waypointElevation);
-                line.push(waypoint);
-              }
-        
-              lines.push(line)
-        
-              
-            
 
 
-            // // Add label
-            // map.addLayer({
-            //   'id': 'label-' + place.properties.title,
-            //   'type': 'symbol',
-            //   'source': 'places',
-            //   'layout': {s
-            //     'text-field': ['get', 'title'],
-            //     'text-font': ['Open Sans Regular'],
-            //     'text-size': 16,
-            //     'text-anchor': 'top',
-            //     'text-offset': [0, -3],
-            //     'icon-allow-overlap': true
-            //   },
-            //   'paint': {
-            //     'text-color': '#000000'
-            //   },
-            // });
+            var line = [];
+            var destination = coordinates;
+            var maxElevation = Math.pow(Math.abs(destination[0] * destination[1]), 0.5) * 60000;
 
-            // // Add line from Lisbon to place
-            // map.addLayer({
-            //   'id': 'line-' + place.properties.title,
-            //   'type': 'line',
-            //   'source': {
-            //     'type': 'geojson',
-            //     'data': {
-            //       'type': 'Feature',
-            //       'properties': {},
-            //       'geometry': {
-            //         'type': 'LineString',
-            //         'coordinates': [
-            //           lisbon_coor,
-            //           coordinates
-            //         ]
-            //       }
-            //     }
-            //   },
-            //   'layout': {
-            //     'line-join': 'round',
-            //     'line-cap': 'round'
-            //   },
-            //   'paint': {
-            //     'line-color': '#14481d',
-            //     'line-width': 1
-            //   }
-            // });
+            var increment = [(destination[0] - lisbon_coor[0]) / arcSegments, (destination[1] - lisbon_coor[1]) / arcSegments]// destination.map(function(direction){
+            // 	return (direction)/arcSegments;
+            // })
+
+            for (var l = 0; l <= arcSegments; l++) {
+              var waypoint = [lisbon_coor[0] + increment[0] * l, lisbon_coor[1] + increment[1] * l]
+
+              var waypointElevation = Math.sin(Math.PI * l / arcSegments) * maxElevation;
+
+              waypoint.push(waypointElevation);
+              line.push(waypoint);
+            }
+
+            lines.push(line)
 
 
 
-            map.on('click', 'places-' + place.properties.title, function (e) {
-              setSelectedPin(e.features[0]);
-              fetchFlights(e.features[0].id);
-            });
+
           });
-          
+
+
           map.addLayer({
             id: 'custom_layer',
             type: 'custom',
             renderingMode: '3d',
-            onAdd: function(map, mbxContext){
-    
+            onAdd: function (map, mbxContext) {
+
               // instantiate threebox
               window.tb = new Threebox(
-                map, 
+                map,
                 mbxContext,
-                {defaultLights: true}
+                { defaultLights: true }
               );
-    
+
               for (let line of lines) {
                 var lineOptions = {
                   geometry: line,
                   color: 0x34a203, // color based on latitude of endpoint
-                  width: 0.9 // random width between 1 and 2
+                  width: 1, // random width between 1 and 2
+                  opacity: 0.4
                 }
-    
+
                 let lineMesh = window.tb.line(lineOptions);
-    
+
                 window.tb.add(lineMesh)
               }
-    
+
             },
-            
-            render: function(gl, matrix){
+
+            render: function (gl, matrix) {
               window.tb.update();
             }
           });
 
           map.addLayer(
             {
-                'id': 'population',
-                'type': 'circle',
-                'source': 'places',
-                'paint': {
-                  'circle-color': '#34a203',
-                  'circle-radius': 4,
-                  //'circle-stroke-width': 1,
-                  //'circle-stroke-color': '#333',
-               }
+              'id': 'places_circles',
+              'type': 'circle',
+              'source': 'places',
+              'paint': {
+                'circle-color': '#34a203',
+                'circle-radius': 4,
+                //'circle-stroke-width': 1,
+                //'circle-stroke-color': '#333',
+              }
             },
-        );
-
+          );
+            map.on('click', 'places_circles', function (e) {
+              setSelectedPin(e.features[0]);
+              fetchFlights(e.features[0].id);
+            });
           setLoading(false); // Set loading to false after data is loaded
         });
     });
+  
+    return () => {
+      // Clean up function to remove map instance when component unmounts
+      map.remove();
+    };
   }, [leftSidebarCollapsed, rightSidebarCollapsed]);
 
   const MAX_RETRIES = 3;
@@ -345,23 +279,6 @@ function App() {
   };
 
 
-  // const fetchFlightOffers = async (originCode, destinationCode, departureDate, returnDate, maxPrice, signal) => {
-  //   const token = await fetchAccessToken();
-  //   const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${originCode}&destinationLocationCode=${destinationCode}&departureDate=${departureDate}&returnDate=${returnDate}&adults=1&nonStop=false&max=10`;
-  //   const response = await fetch(url, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Authorization': `Bearer ${token}`
-  //     },
-  //     signal: signal // Pass the signal to the fetch options
-  //   });
-  //   if (!response.ok) {
-  //     throw new Error(`Failed to fetch flight offers: ${response.status}`);
-  //   }
-  //   const data = await response.json();
-  //   return data;
-  // };
-
   const fetchAccessToken = async () => {
     const clientId = 'uS5EhacEI4gBUsM2NX3cvtEWnguAfvmV';
     const clientSecret = '0zQH6bKT8HV3D8DE';
@@ -381,44 +298,11 @@ function App() {
 
 
 
-  // const fetchFlights = async (destinationId) => {
-  //   try {
-  //     setLoading(true);
-
-  //     // Create an instance of AbortController
-  //     const abortController = new AbortController();
-  //     const signal = abortController.signal;
-
-  //     const originCode = 'LIS'; // Assuming Lisbon is the origin
-  //     const destinationCode = airportCodes.codes[destinationId];
-  //     const maxPrice = 250; // Example maximum price
-
-  //     // Example dates (use startDate and endDate state values instead)
-  //     const departureDate = startDate || '2024-07-15';
-  //     const returnDate = endDate || '2024-07-20';
-
-  //     // Check if there's an ongoing fetch, if yes, abort it
-  //     if (fetchFlights.currentRequest) {
-  //       fetchFlights.currentRequest.abort();
-  //     }
-
-  //     // Store the current fetch request
-  //     fetchFlights.currentRequest = abortController;
-
-  //     const data = await fetchFlightOffers(originCode, destinationCode, departureDate, returnDate, maxPrice, signal);
-  //     setLoading(false);
-  //     setFlights(data.data);
-
-  //   } catch (error) {
-  //     console.error('Error fetching flight offers:', error);
-  //   }
-  // };
-
 
 
   return (
 
-    <div class="flex flex-col h-screen">
+    <div className="flex flex-col h-screen">
       <div className="w-full z-40 flex flex-wrap items-center justify-between mx-auto p-4  bg-white border-white">
         <div id='logo' className="logo flex flex-col items-center px-8">
           <span className="logo-text font-[Glendale] text-[21px] font-bold text-black">ANYWHERE</span>
@@ -442,10 +326,10 @@ function App() {
         </div>
       </div>
 
-      <div class="flex flex-1">
+      <div className="flex flex-1">
 
 
-        <div class="flex-1 bg-white h-full">
+        <div className="flex-1 bg-white h-full">
           <div className='relative w-[100%] h-[100%] z-10' id="map" >
             <div id='left-bar' className={`w-1/4 absolute left-0 top-0 bg-gray-200 h-full z-10 ${leftSidebarCollapsed ? 'hidden' : ''}`}>
               <div className='w-8 absolute left-[100%] z-60'>
@@ -457,29 +341,9 @@ function App() {
                 <ChevronDoubleRightIcon onClick={toggleLeftSidebar}>Toggle Right Sidebar</ChevronDoubleRightIcon>
               </div>
             </div>
-            <div id='right-bar' className={`w-1/4 absolute right-0 top-0 bg-gray-200 h-full p-4 z-10 ${rightSidebarCollapsed ? 'hidden' : ''}`}>
-              <div className='w-8 relative right-12 z-60'>
-                <ChevronDoubleRightIcon onClick={toggleRightSidebar}>Toggle Right Sidebar</ChevronDoubleRightIcon>
-              </div>
+            <RightSideBar flights={flights} rightSidebarCollapsed={rightSidebarCollapsed} toggleRightSidebar= {toggleRightSidebar}></RightSideBar>
 
-              <div className=" h-14 p-2.5 bg-white rounded-lg shadow border border-neutral-200 justify-start items-center gap-16 inline-flex">
-                <div className="flex-col justify-start items-start gap-0.5 inline-flex">
-                  <div className="w-36 text-neutral-900 text-xs font-extrabold font-['Inter'] leading-none">02 Feb - 03 Mar</div>
-                  <div className="w-40 text-neutral-900 text-xs font-light font-['Inter'] leading-none">21 noites | Fri - Tue</div>
-                </div>
-                <div className="justify-end items-center gap-3.5 flex">
-                  <div className="w-9 h-px  rotate-90 border border-neutral-200"></div>
-                  <div className="flex-col justify-center items-center gap-1 inline-flex">
-                    <div className="w-12 text-center text-green-700 text-xs font-extrabold font-['Inter'] leading-3">384€</div>
-                    <div className="justify-center items-center gap-0.5 inline-flex">
-                      <div className="text-right text-neutral-900 text-xs font-light font-['Inter'] leading-3">2 stops</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class={`absolute right-0 top-0 ${!rightSidebarCollapsed ? 'hidden' : ''}`}>
+            <div className={`absolute right-0 top-0 ${!rightSidebarCollapsed ? 'hidden' : ''}`}>
               <div className='w-8 relative right-0 z-60'>
                 <ChevronDoubleLeftIcon onClick={toggleRightSidebar}>Toggle Right Sidebar</ChevronDoubleLeftIcon>
               </div>
