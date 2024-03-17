@@ -9,6 +9,10 @@ import DateRangePicker from 'flowbite-datepicker/DateRangePicker';
 import Datepicker from "react-tailwindcss-datepicker";
 import { Threebox } from 'threebox-plugin';
 import RightSideBar from './components/RightSideBar';
+import * as THREE from 'three';
+import ReactDOMServer from 'react-dom/server';
+import PopupCard from './components/PopupCard'; // Path to your PopupMessage component
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
@@ -20,6 +24,7 @@ function App() {
   const [searchClicked, setSearchClicked] = useState(false); // Track whether search button is clicked
 
   const [endDate, setEndDate] = useState('');
+  const [allPrices, setAllPrices] = useState({});
 
   const startDateObj = {
     startDate: startDate,
@@ -70,21 +75,9 @@ function App() {
 
     let lisbon_coor = [-9.1406, 38.7223]
 
-
-
-    // randomly generate some line arcs (not essential for understanding this demo)
-
-
-
-
-
-
     map.on('load', () => {
 
-
       var lines = [];
-
-
 
       // Load an image from an external URL.
       map.loadImage('https://static.vecteezy.com/system/resources/previews/015/165/175/non_2x/orange-round-background-for-text-create-posts-stories-headlines-highlights-transparent-clipart-free-png.png', (error, image) => {
@@ -99,6 +92,17 @@ function App() {
         })
         .then(data => {
           var places = data.features;
+
+          // Iterate through places and add price to each place object
+          places.forEach(place => {
+            const id = place.id;
+            if (allPrices[id]) {
+              place.properties.price = allPrices[id]; // Add price to place object
+            }
+            else {
+              place.properties.price = null
+            }
+          });
 
           map.addSource('places', {
             'type': 'geojson',
@@ -122,8 +126,6 @@ function App() {
             var maxElevation = Math.pow(Math.abs(destination[0] * destination[1]), 0.5) * 60000;
 
             var increment = [(destination[0] - lisbon_coor[0]) / arcSegments, (destination[1] - lisbon_coor[1]) / arcSegments]// destination.map(function(direction){
-            // 	return (direction)/arcSegments;
-            // })
 
             for (var l = 0; l <= arcSegments; l++) {
               var waypoint = [lisbon_coor[0] + increment[0] * l, lisbon_coor[1] + increment[1] * l]
@@ -134,7 +136,7 @@ function App() {
               line.push(waypoint);
             }
 
-            lines.push(line)
+            lines.push([line, place.id])
 
 
 
@@ -156,10 +158,14 @@ function App() {
               );
 
               for (let line of lines) {
+                var color_ = 0x34a203;
+                if (line[1] in Object.keys(allPrices)) {
+                  var color_ = getColorByPrice(allPrices[line[1]]);
+                }
                 var lineOptions = {
-                  geometry: line,
-                  color: 0x34a203, // color based on latitude of endpoint
-                  width: 1, // random width between 1 and 2
+                  geometry: line[0],
+                  color: color_,// 0x34a203, // color based on latitude of endpoint
+                  width: 1.5, // random width between 1 and 2
                   opacity: 0.4
                 }
 
@@ -181,26 +187,258 @@ function App() {
               'type': 'circle',
               'source': 'places',
               'paint': {
-                'circle-color': '#34a203',
-                'circle-radius': 4,
+                'circle-color': ["case",
+                  ["==", ["typeof", ["get", "price"]], "number"],
+                  ['interpolate', ['linear'], ['get', 'price'], // 'property_name' is the property in your data source
+                    /* Define your property values and corresponding colors here */
+                    Math.min(...Object.values(allPrices).filter(value => value< 100000)), '#98fb98', // For example, if property value is 0, color the circle with '#34a203'
+                    Math.max(...Object.values(allPrices).filter(value => value< 100000)), '#ffa500', // For example, if property value is 50, color the circle with '#ff0000'
+                    /* Add more property values and corresponding colors as needed */
+                  ]
+                  ,
+                  "gray"
+                ],
+                'circle-radius': 5,
                 //'circle-stroke-width': 1,
                 //'circle-stroke-color': '#333',
               }
             },
           );
-            map.on('click', 'places_circles', function (e) {
-              setSelectedPin(e.features[0]);
-              fetchFlights(e.features[0].id);
-            });
+          map.on('click', 'places_circles', function (e) {
+            setSelectedPin(e.features[0]);
+            fetchFlights(e.features[0].id);
+          });
+          //Create a popup, but don't add it to the map yet.
+        const popup = new mapboxgl.Popup({
+          closeButton: false,
+          closeOnClick: false
+      });
+
+
+        //   map.on('mouseenter', 'places_circles', (e) => {
+        //     console.log(e)
+        //     // Change the cursor style as a UI indicator.
+        //     map.getCanvas().style.cursor = 'pointer';
+
+        //     // Copy coordinates array.
+        //     const coordinates = e.features[0].geometry.coordinates.slice();
+        //     const description = e.features[0].properties.description;
+
+        //     // Ensure that if the map is zoomed out such that multiple
+        //     // copies of the feature are visible, the popup appears
+        //     // over the copy being pointed to.
+        //     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        //         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        //     }
+
+        //     // Populate the popup and set its coordinates
+        //     // based on the feature found.
+        //     popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        // });
+
+        map.on('mouseenter', 'places_circles', (e) => {
+          console.log(e);
+        
+          // Change the cursor style as a UI indicator.
+          map.getCanvas().style.cursor = 'pointer';
+        
+          // Copy coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const description = e.features[0].properties.description;
+        
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+        
+          // Render popup message using React component.
+          const formattedDate = 'Some formatted date'; // Replace with your date formatting logic
+          const popupContent = ReactDOMServer.renderToStaticMarkup(
+            <PopupCard place={e} />
+          );
+        
+
+
+            popup.setLngLat(coordinates)
+            .setHTML(popupContent)
+            .addTo(map);
+        });
+
+        map.on('mouseleave', 'places_circles', () => {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+
+          
           setLoading(false); // Set loading to false after data is loaded
         });
     });
-  
+
     return () => {
       // Clean up function to remove map instance when component unmounts
       map.remove();
     };
-  }, [leftSidebarCollapsed, rightSidebarCollapsed]);
+  }, [leftSidebarCollapsed, rightSidebarCollapsed, allPrices]);
+
+  const generateMockFlights = () => {
+    const mockFlights = [];
+  
+    for (let i = 0; i < 31; i++) {
+      const departureDateTime = new Date(Date.now() + Math.random() * 86400000); // Random departure time within the next 24 hours
+      const arrivalDateTime = new Date(departureDateTime.getTime() + Math.random() * 10800000); // Random arrival time within 3 hours after departure
+      const duration = `${Math.floor((arrivalDateTime - departureDateTime) / 3600000)}h ${Math.floor(((arrivalDateTime - departureDateTime) % 3600000) / 60000)}m`; // Duration in hours and minutes
+      const price = Math.floor(Math.random() * 500) + 100; // Random price between 100 and 600
+      const stops = Math.floor(Math.random() * 4); // Random number of stops between 0 and 3
+  
+      const flight = {
+        destinationId: i + 1,
+        data:[{
+        itineraries: [
+          {
+            segments: [
+              {
+                departure: {
+                  at: departureDateTime.toISOString() // ISO 8601 formatted departure time
+                },
+                arrival: {
+                  at: arrivalDateTime.toISOString() // ISO 8601 formatted arrival time
+                }
+              }
+            ],
+            duration: duration
+          }
+        ],
+        price: {
+          total: price,
+          grandTotal: price
+        },
+        stops: stops
+      }]};
+  
+      mockFlights.push(flight);
+    }
+  
+    return mockFlights;
+  };
+  
+
+
+  useEffect(() => {
+    if (searchClicked && startDate !== '' && endDate !== '') {
+      const mockData = generateMockFlights();
+      setFlights(mockData);
+      setSearchClicked(false); // Reset searchClicked after search is triggered
+    }
+  }, [searchClicked, startDate, endDate]);
+
+  useEffect(() => {
+    // Fetch flight prices for all destinations from Lisbon
+    const fetchAllPrices = async () => {
+      try {
+        const originCode = 'LIS'; // Lisbon airport code
+        const departureDate = startDate || '2024-07-15'; // Default departure date
+        const returnDate = endDate || '2024-07-20'; // Default return date
+        const maxPrice = 250; // Maximum price for filtering
+        const prices = {};
+        const data = generateMockFlights() //await fetchFlightOffersParallel(originCode, airportCodes.codes, departureDate, returnDate, maxPrice);
+        
+        data.map((d)=>{
+          const lowestPrice = Math.min(...d.data.map((d) => parseInt(d.price.grandTotal)));
+          prices[d['destinationId']] = lowestPrice;
+      })
+
+        // for (const d in Object.values(data)) {
+        //   //const destinationCode = d[0].itineraries[0].segments[-1].arrival.iataCode
+        //   const lowestPrice = Math.min(...d.data.map((d) => parseInt(d.price.grandTotal)));
+        //   prices[d['destinationId']] = lowestPrice;
+        // }
+
+        setAllPrices(prices);
+      } catch (error) {
+        console.error('Error fetching flight prices for all destinations:', error);
+      }
+    };
+
+    fetchAllPrices(); // Fetch flight prices when component mounts or when date changes
+
+  }, [startDate, endDate]); // Trigger effect when startDate or endDate changes
+
+  const rgbToHex = (rgb) => {
+    return `0x${rgb.map(channel => channel.toString(16).padStart(2, '0')).join('')}`;
+  };
+  // Function to determine color gradient based on price
+  const getColorByPrice = (price) => {
+    try {
+      // Define color range from light green to orange
+      const colorRange = [
+        { price: Math.min(...Object.values(allPrices).filter(value => value< 100000)), color: [152, 251, 152] }, // Light green
+        { price: Math.max(...Object.values(allPrices).filter(value => value< 100000)), color: [255, 165, 0] }  // Orange
+      ];
+
+      // Find appropriate color based on price
+      for (let i = 1; i < colorRange.length; i++) {
+        if (price <= colorRange[i].price) {
+          const prevColor = colorRange[i - 1].color;
+          const nextColor = colorRange[i].color;
+          const ratio = (price - colorRange[i - 1].price) / (colorRange[i].price - colorRange[i - 1].price);
+          const color = prevColor.map((channel, index) => Math.round(channel + ratio * (nextColor[index] - channel)));
+          const color_threejs = new THREE.Color(`rgb(${color.join(',')})`);
+          return color_threejs;
+        }
+      }
+
+      return new THREE.Color('gray'); // Default to red if price exceeds range
+    }
+    catch (error) {
+      return new THREE.Color('gray');
+    }
+  };
+
+
+  const fetchFlightOffersParallel = async (originCode, destinationCodes, departureDate, returnDate, maxPrice, signal, retries = 3) => {
+    try {
+      const token = await fetchAccessToken();
+  
+      async function get_responses(destinationCodeId, retryCount) {
+        if (retryCount === 0) return null; // No more retries left
+  
+        const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${originCode}&destinationLocationCode=${destinationCodes[destinationCodeId]}&departureDate=${departureDate}&returnDate=${returnDate}&adults=1&nonStop=false&max=10`;
+  
+        try {
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            },
+            signal: signal // Pass the signal to the fetch options
+          });
+  
+          if (!response.ok) {
+            console.log(`Failed to fetch flight offers for ${destinationCodes[destinationCodeId]}: ${response.status}`);
+            return await get_responses(destinationCodeId, retryCount - 1); // Retry
+          }
+  
+          const responseData = await response.json();
+          responseData.destinationId = destinationCodeId;
+          console.log(`Success fetching flight offers for ${destinationCodes[destinationCodeId]}: ${response.status}`);
+          return responseData;
+        } catch (error) {
+          console.error(`Error fetching flight offers for ${destinationCodes[destinationCodeId]}:`, error);
+          return await get_responses(destinationCodeId, retryCount - 1); // Retry
+        }
+      };
+  
+      const requests = Object.keys(destinationCodes).map(destinationCodeId => get_responses(destinationCodeId, retries));
+      const results = await Promise.all(requests);
+      return results.filter(x => x !== null && x.data && x.data.length);
+    } catch (error) {
+      console.error('Error fetching flight offers in parallel:', error);
+      return []; // Return empty array instead of throwing error
+    }
+  };
+  
 
   const MAX_RETRIES = 3;
   const RETRY_DELAY = 1000; // 1 second
@@ -270,7 +508,8 @@ function App() {
       // Store the current fetch request
       fetchFlights.currentRequest = abortController;
 
-      const data = await fetchFlightOffers(originCode, destinationCode, departureDate, returnDate, maxPrice, signal);
+      const data = generateMockFlights() 
+      // await fetchFlightOffers(originCode, destinationCode, departureDate, returnDate, maxPrice, signal);
       setLoading(false);
       setFlights(data.data);
     } catch (error) {
@@ -341,7 +580,7 @@ function App() {
                 <ChevronDoubleRightIcon onClick={toggleLeftSidebar}>Toggle Right Sidebar</ChevronDoubleRightIcon>
               </div>
             </div>
-            <RightSideBar flights={flights} rightSidebarCollapsed={rightSidebarCollapsed} toggleRightSidebar= {toggleRightSidebar}></RightSideBar>
+            <RightSideBar flights={flights} rightSidebarCollapsed={rightSidebarCollapsed} toggleRightSidebar={toggleRightSidebar}></RightSideBar>
 
             <div className={`absolute right-0 top-0 ${!rightSidebarCollapsed ? 'hidden' : ''}`}>
               <div className='w-8 relative right-0 z-60'>

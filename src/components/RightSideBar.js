@@ -12,7 +12,7 @@ function FlightCard({ flight, flights }){
   return (
     <div className="h-14 p-2.5 bg-white rounded-lg shadow border border-neutral-200 justify-start items-center gap-16 inline-flex">
       <div className="flex-col justify-start items-start gap-0.5 inline-flex">
-        <div className="w-36 text-neutral-900 text-xs font-extrabold font-['Inter'] leading-none">{departureDateTime.slice(8, 10)} {departureDateTime.slice(5, 7)} - {arrivalDateTime.slice(8, 10)} {arrivalDateTime.slice(5, 7)}</div>
+        <div className="w-36 text-neutral-900 text-xs font-extrabold font-['Inter'] leading-none">{departureDateTime.slice(8, 10)}/{departureDateTime.slice(5, 7)} ({departureDateTime.slice(11, 16)}) - {arrivalDateTime.slice(8, 10)}/{arrivalDateTime.slice(5, 7)}({arrivalDateTime.slice(11, 16)})</div>
         <div className="w-40 text-neutral-900 text-xs font-light font-['Inter'] leading-none">{duration}</div>
       </div>
       <div className="justify-end items-center gap-3.5 flex">
