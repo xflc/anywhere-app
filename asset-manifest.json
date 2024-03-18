@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/honey-assistant/static/css/main.ff11969f.css",
+    "main.js": "/honey-assistant/static/js/main.09cab2c3.js",
+    "static/media/Inter-Regular.ttf": "/honey-assistant/static/media/Inter-Regular.fd272b9e3ca9b73890cb.ttf",
+    "static/media/Gilroy-Medium.ttf": "/honey-assistant/static/media/Gilroy-Medium.1b4da6582f83f45ea039.ttf",
+    "static/media/glendale2.ttf": "/honey-assistant/static/media/glendale2.6582afa67c1d11778719.ttf",
+    "index.html": "/honey-assistant/index.html",
+    "main.ff11969f.css.map": "/honey-assistant/static/css/main.ff11969f.css.map",
+    "main.09cab2c3.js.map": "/honey-assistant/static/js/main.09cab2c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff11969f.css",
+    "static/js/main.09cab2c3.js"
+  ]
+}
