@@ -15,8 +15,8 @@ import PopupCard from './components/PopupCard'; // Path to your PopupMessage com
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
-  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
-  const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState(false);
+  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(true);
+  const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState(true);
   const [selectedPin, setSelectedPin] = useState("");
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(false);
