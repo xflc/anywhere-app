@@ -217,26 +217,6 @@ function App() {
           });
 
 
-          //   map.on('mouseenter', 'places_circles', (e) => {
-          //     console.log(e)
-          //     // Change the cursor style as a UI indicator.
-          //     map.getCanvas().style.cursor = 'pointer';
-
-          //     // Copy coordinates array.
-          //     const coordinates = e.features[0].geometry.coordinates.slice();
-          //     const description = e.features[0].properties.description;
-
-          //     // Ensure that if the map is zoomed out such that multiple
-          //     // copies of the feature are visible, the popup appears
-          //     // over the copy being pointed to.
-          //     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-          //         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-          //     }
-
-          //     // Populate the popup and set its coordinates
-          //     // based on the feature found.
-          //     popup.setLngLat(coordinates).setHTML(description).addTo(map);
-          // });
 
           map.on('mouseenter', 'places_circles', (e) => {
             console.log(e);
@@ -261,18 +241,10 @@ function App() {
               <PopupCard place={e} />
             );
 
-
-
             popup.setLngLat(coordinates)
               .setHTML(popupContent)
               .addTo(map);
           });
-
-          // map.on('mouseleave', 'places_circles', () => {
-          //     map.getCanvas().style.cursor = '';
-          //     popup.remove();
-          // });
-
 
           setLoading(false); // Set loading to false after data is loaded
         });
@@ -442,48 +414,6 @@ function App() {
     }
   };
 
-
-  const MAX_RETRIES = 3;
-  const RETRY_DELAY = 1000; // 1 second
-
-  const fetchFlightOffers = async (originCode, destinationCode, departureDate, returnDate, maxPrice, signal) => {
-    let retries = 0;
-
-    while (retries < MAX_RETRIES) {
-      try {
-        const token = await fetchAccessToken();
-        const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${originCode}&destinationLocationCode=${destinationCode}&departureDate=${departureDate}&returnDate=${returnDate}&adults=1&nonStop=false&max=10`;
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`
-          },
-          signal: signal // Pass the signal to the fetch options
-        });
-
-        if (!response.ok) {
-          throw new Error(`Failed to fetch flight offers: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data)
-        return data;
-      } catch (error) {
-        console.error('Error fetching flight offers:', error);
-
-        // Retry if it's a network-related error or if it's a 5xx server error
-        if (error instanceof TypeError || (error.response && error.response.status >= 500)) {
-          retries++;
-          console.log(`Retrying... Attempt ${retries}`);
-          await new Promise(resolve => setTimeout(resolve, RETRY_DELAY * retries)); // Exponential backoff
-        } else {
-          throw error; // Rethrow other types of errors
-        }
-      }
-    }
-
-    throw new Error('Max retries reached. Failed to fetch flight offers.');
-  };
 
 
 
