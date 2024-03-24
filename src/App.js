@@ -15,7 +15,7 @@ import PopupCard from './components/PopupCard'; // Path to your PopupMessage com
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
-  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(true);
+  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
   const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState(true);
   const [selectedPin, setSelectedPin] = useState("");
   const [flights, setFlights] = useState([]);
@@ -191,8 +191,8 @@ function App() {
                   ["==", ["typeof", ["get", "price"]], "number"],
                   ['interpolate', ['linear'], ['get', 'price'], // 'property_name' is the property in your data source
                     /* Define your property values and corresponding colors here */
-                    Math.min(...Object.values(allPrices).filter(value => value< 100000)), '#98fb98', // For example, if property value is 0, color the circle with '#34a203'
-                    Math.max(...Object.values(allPrices).filter(value => value< 100000)), '#ffa500', // For example, if property value is 50, color the circle with '#ff0000'
+                    Math.min(...Object.values(allPrices).filter(value => value < 100000)), '#98fb98', // For example, if property value is 0, color the circle with '#34a203'
+                    Math.max(...Object.values(allPrices).filter(value => value < 100000)), '#ffa500', // For example, if property value is 50, color the circle with '#ff0000'
                     /* Add more property values and corresponding colors as needed */
                   ]
                   ,
@@ -209,69 +209,71 @@ function App() {
             fetchFlights(e.features[0].id);
           });
           //Create a popup, but don't add it to the map yet.
-        const popup = new mapboxgl.Popup({
-          closeButton: false,
-          closeOnClick: false
-      });
+          const popup = new mapboxgl.Popup({
+            closeButton: true,
+            closeOnClick: true,
+            className: "popupTEST",
+
+          });
 
 
-        //   map.on('mouseenter', 'places_circles', (e) => {
-        //     console.log(e)
-        //     // Change the cursor style as a UI indicator.
-        //     map.getCanvas().style.cursor = 'pointer';
+          //   map.on('mouseenter', 'places_circles', (e) => {
+          //     console.log(e)
+          //     // Change the cursor style as a UI indicator.
+          //     map.getCanvas().style.cursor = 'pointer';
 
-        //     // Copy coordinates array.
-        //     const coordinates = e.features[0].geometry.coordinates.slice();
-        //     const description = e.features[0].properties.description;
+          //     // Copy coordinates array.
+          //     const coordinates = e.features[0].geometry.coordinates.slice();
+          //     const description = e.features[0].properties.description;
 
-        //     // Ensure that if the map is zoomed out such that multiple
-        //     // copies of the feature are visible, the popup appears
-        //     // over the copy being pointed to.
-        //     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        //         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-        //     }
+          //     // Ensure that if the map is zoomed out such that multiple
+          //     // copies of the feature are visible, the popup appears
+          //     // over the copy being pointed to.
+          //     while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          //         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          //     }
 
-        //     // Populate the popup and set its coordinates
-        //     // based on the feature found.
-        //     popup.setLngLat(coordinates).setHTML(description).addTo(map);
-        // });
+          //     // Populate the popup and set its coordinates
+          //     // based on the feature found.
+          //     popup.setLngLat(coordinates).setHTML(description).addTo(map);
+          // });
 
-        map.on('mouseenter', 'places_circles', (e) => {
-          console.log(e);
-        
-          // Change the cursor style as a UI indicator.
-          map.getCanvas().style.cursor = 'pointer';
-        
-          // Copy coordinates array.
-          const coordinates = e.features[0].geometry.coordinates.slice();
-          const description = e.features[0].properties.description;
-        
-          // Ensure that if the map is zoomed out such that multiple
-          // copies of the feature are visible, the popup appears
-          // over the copy being pointed to.
-          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-          }
-        
-          // Render popup message using React component.
-          const formattedDate = 'Some formatted date'; // Replace with your date formatting logic
-          const popupContent = ReactDOMServer.renderToStaticMarkup(
-            <PopupCard place={e} />
-          );
-        
+          map.on('mouseenter', 'places_circles', (e) => {
+            console.log(e);
+
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = e.features[0].properties.description;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            // Render popup message using React component.
+            const formattedDate = 'Some formatted date'; // Replace with your date formatting logic
+            const popupContent = ReactDOMServer.renderToStaticMarkup(
+              <PopupCard place={e} />
+            );
+
 
 
             popup.setLngLat(coordinates)
-            .setHTML(popupContent)
-            .addTo(map);
-        });
+              .setHTML(popupContent)
+              .addTo(map);
+          });
 
-        map.on('mouseleave', 'places_circles', () => {
-            map.getCanvas().style.cursor = '';
-            popup.remove();
-        });
+          // map.on('mouseleave', 'places_circles', () => {
+          //     map.getCanvas().style.cursor = '';
+          //     popup.remove();
+          // });
 
-          
+
           setLoading(false); // Set loading to false after data is loaded
         });
     });
@@ -284,45 +286,46 @@ function App() {
 
   const generateMockFlights = () => {
     const mockFlights = [];
-  
+
     for (let i = 0; i < 31; i++) {
       const departureDateTime = new Date(Date.now() + Math.random() * 86400000); // Random departure time within the next 24 hours
       const arrivalDateTime = new Date(departureDateTime.getTime() + Math.random() * 10800000); // Random arrival time within 3 hours after departure
       const duration = `${Math.floor((arrivalDateTime - departureDateTime) / 3600000)}h ${Math.floor(((arrivalDateTime - departureDateTime) % 3600000) / 60000)}m`; // Duration in hours and minutes
       const price = Math.floor(Math.random() * 500) + 100; // Random price between 100 and 600
       const stops = Math.floor(Math.random() * 4); // Random number of stops between 0 and 3
-  
+
       const flight = {
         destinationId: i + 1,
-        data:[{
-        itineraries: [
-          {
-            segments: [
-              {
-                departure: {
-                  at: departureDateTime.toISOString() // ISO 8601 formatted departure time
-                },
-                arrival: {
-                  at: arrivalDateTime.toISOString() // ISO 8601 formatted arrival time
+        data: [{
+          itineraries: [
+            {
+              segments: [
+                {
+                  departure: {
+                    at: departureDateTime.toISOString() // ISO 8601 formatted departure time
+                  },
+                  arrival: {
+                    at: arrivalDateTime.toISOString() // ISO 8601 formatted arrival time
+                  }
                 }
-              }
-            ],
-            duration: duration
-          }
-        ],
-        price: {
-          total: price,
-          grandTotal: price
-        },
-        stops: stops
-      }]};
-  
+              ],
+              duration: duration
+            }
+          ],
+          price: {
+            total: price,
+            grandTotal: price
+          },
+          stops: stops
+        }]
+      };
+
       mockFlights.push(flight);
     }
-  
+
     return mockFlights;
   };
-  
+
 
 
   useEffect(() => {
@@ -343,11 +346,11 @@ function App() {
         const maxPrice = 250; // Maximum price for filtering
         const prices = {};
         const data = generateMockFlights() //await fetchFlightOffersParallel(originCode, airportCodes.codes, departureDate, returnDate, maxPrice);
-        
-        data.map((d)=>{
+
+        data.map((d) => {
           const lowestPrice = Math.min(...d.data.map((d) => parseInt(d.price.grandTotal)));
           prices[d['destinationId']] = lowestPrice;
-      })
+        })
 
         // for (const d in Object.values(data)) {
         //   //const destinationCode = d[0].itineraries[0].segments[-1].arrival.iataCode
@@ -373,8 +376,8 @@ function App() {
     try {
       // Define color range from light green to orange
       const colorRange = [
-        { price: Math.min(...Object.values(allPrices).filter(value => value< 100000)), color: [152, 251, 152] }, // Light green
-        { price: Math.max(...Object.values(allPrices).filter(value => value< 100000)), color: [255, 165, 0] }  // Orange
+        { price: Math.min(...Object.values(allPrices).filter(value => value < 100000)), color: [152, 251, 152] }, // Light green
+        { price: Math.max(...Object.values(allPrices).filter(value => value < 100000)), color: [255, 165, 0] }  // Orange
       ];
 
       // Find appropriate color based on price
@@ -400,12 +403,12 @@ function App() {
   const fetchFlightOffersParallel = async (originCode, destinationCodes, departureDate, returnDate, maxPrice, signal, retries = 3) => {
     try {
       const token = await fetchAccessToken();
-  
+
       async function get_responses(destinationCodeId, retryCount) {
         if (retryCount === 0) return null; // No more retries left
-  
+
         const url = `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${originCode}&destinationLocationCode=${destinationCodes[destinationCodeId]}&departureDate=${departureDate}&returnDate=${returnDate}&adults=1&nonStop=false&max=10`;
-  
+
         try {
           const response = await fetch(url, {
             method: 'GET',
@@ -414,12 +417,12 @@ function App() {
             },
             signal: signal // Pass the signal to the fetch options
           });
-  
+
           if (!response.ok) {
             console.log(`Failed to fetch flight offers for ${destinationCodes[destinationCodeId]}: ${response.status}`);
             return await get_responses(destinationCodeId, retryCount - 1); // Retry
           }
-  
+
           const responseData = await response.json();
           responseData.destinationId = destinationCodeId;
           console.log(`Success fetching flight offers for ${destinationCodes[destinationCodeId]}: ${response.status}`);
@@ -429,7 +432,7 @@ function App() {
           return await get_responses(destinationCodeId, retryCount - 1); // Retry
         }
       };
-  
+
       const requests = Object.keys(destinationCodes).map(destinationCodeId => get_responses(destinationCodeId, retries));
       const results = await Promise.all(requests);
       return results.filter(x => x !== null && x.data && x.data.length);
@@ -438,7 +441,7 @@ function App() {
       return []; // Return empty array instead of throwing error
     }
   };
-  
+
 
   const MAX_RETRIES = 3;
   const RETRY_DELAY = 1000; // 1 second
@@ -508,7 +511,7 @@ function App() {
       // Store the current fetch request
       fetchFlights.currentRequest = abortController;
 
-      const data = generateMockFlights() 
+      const data = generateMockFlights()
       // await fetchFlightOffers(originCode, destinationCode, departureDate, returnDate, maxPrice, signal);
       setLoading(false);
       setFlights(data.data);
@@ -547,22 +550,35 @@ function App() {
           <span className="logo-text font-[Glendale] text-[21px] font-bold text-black">ANYWHERE</span>
           <span className="logo-sub-text font-[Gilroy] text-[13px] text-black">By GPTur</span>
         </div>
-        <div className="md:flex md:order-2 space-x-3 hidden md:space-x-0 rtl:space-x-reverse">
-          <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-          <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
-            <span className="sr-only">Open main menu</span>
-            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-          </button>
-        </div>
-        <div className="items-center justify-between w-full md:flex md:w-auto md:order-1 gap-6" id="navbar-cta">
-          <div className='flex  gap-3'>
-            Dates:<Datepicker showShortcuts={false} value={startDateObj} onChange={handleDateChange} />
+        <div className="Frame7 h-16 justify-start items-center gap-6 inline-flex">
+          <div className="Sitio p-2.5 bg-neutral-100 rounded-2xl border border-neutral-200 justify-start items-center gap-2.5 flex">
+            <div className="Frame3 w-44 px-3.5 py-2.5 bg-white rounded-lg border border-neutral-200 justify-center items-center gap-2 flex">
+              <div className="From text-neutral-900 text-opacity-50 text-xs font-normal font-['Inter'] leading-3">From</div>
+              <div className="Frame4 h-5 p-1 justify-start items-center gap-2.5 flex">
+                <div className="Lisbon text-neutral-900 text-xs font-normal font-['Inter'] leading-none">Lisbon</div>
+              </div>
+            </div>
+            <div className="Frame w-6 h-6 flex-col justify-center items-center inline-flex" />
+            <div className="Frame4 w-40 px-3.5 py-2.5 bg-white rounded-lg border border-neutral-200 justify-center items-center gap-2 flex">
+              <div className="To text-neutral-900 text-opacity-50 text-xs font-normal font-['Inter'] leading-3">To</div>
+              <div className="Frame4 h-5 p-1 justify-start items-center gap-2.5 flex">
+                <div className="Anywhere text-neutral-900 text-xs font-normal font-['Inter'] leading-none">Anywhere</div>
+              </div>
+            </div>
+          </div>
+          <div className="items-center justify-between w-full md:flex md:w-auto md:order-1 gap-6" id="navbar-cta">
+            <div className='flex  gap-3'>
+              Dates:<Datepicker showShortcuts={false} value={startDateObj} onChange={handleDateChange} />
+            </div>
+
+            <button type="button" onClick={handleButtonClick} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
           </div>
 
-          <button type="button" onClick={handleButtonClick} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
+        <div className="md:flex md:order-2 space-x-3 hidden md:space-x-0 rtl:space-x-reverse">
+          <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+        </div>
+
       </div>
 
       <div className="flex flex-1">
