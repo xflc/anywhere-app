@@ -7,7 +7,8 @@
       "properties": {
         "title": "Maldives",
         "description": "Known for its stunning overwater bungalows, clear blue waters, and romantic sunsets",
-        "link": "https://www.theknot.com/tk-media/images/6695e24a-8684-44b2-9fb7-f7255efec7ae"
+        "link": "https://www.theknot.com/tk-media/images/6695e24a-8684-44b2-9fb7-f7255efec7ae",
+        "county_code": "MV"
       },
       "geometry": {
         "type": "Point",
@@ -23,7 +24,8 @@
       "properties": {
         "title": "Santorini, Greece",
         "description": "Famous for its picturesque white-washed buildings, cliffside views, and romantic ambiance",
-        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg"
+        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg",
+        "county_code": "GR"
       },
       "geometry": {
         "type": "Point",
@@ -39,7 +41,8 @@
       "properties": {
         "title": "Paris, France",
         "description": "The City of Love with its iconic landmarks, charming streets, and world-class cuisine",
-        "link": "https://www.telegraph.co.uk/content/dam/luxury/2016/04/22/Four-Seasons-George-V-LUXURY.jpghttps://www.telegraph.co.uk/content/dam/luxury/2016/04/22/Four-Seasons-George-V-LUXURY.jpg"
+        "link": "https://www.telegraph.co.uk/content/dam/luxury/2016/04/22/Four-Seasons-George-V-LUXURY.jpghttps://www.telegraph.co.uk/content/dam/luxury/2016/04/22/Four-Seasons-George-V-LUXURY.jpg",
+        "county_code": "FR"
       },
       "geometry": {
         "type": "Point",
@@ -55,7 +58,8 @@
       "properties": {
         "title": "Hawaii, USA",
         "description": "Diverse landscapes, beautiful beaches, and opportunities for adventure",
-        "link": "https://www.abercrombiekent.co.uk/-/media/abercrombieandkent/images/itineraries/destinations/north-america/usa/hawaii/highlights-of-hawaii/day-5-7-highlights-hawaii-maui.jpg?w=1920&h=940"
+        "link": "https://www.abercrombiekent.co.uk/-/media/abercrombieandkent/images/itineraries/destinations/north-america/usa/hawaii/highlights-of-hawaii/day-5-7-highlights-hawaii-maui.jpg?w=1920&h=940",
+        "county_code": "US"
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +75,8 @@
       "properties": {
         "title": "Bali, Indonesia",
         "description": "Lush landscapes, stunning beaches, rich culture, and luxurious resorts",
-        "link": "https://theplunge.com/wp-content/uploads/2017/09/ultimate_honeymoon_guide_bali_header.png"
+        "link": "https://theplunge.com/wp-content/uploads/2017/09/ultimate_honeymoon_guide_bali_header.png",
+        "county_code": "ID"
       },
       "geometry": {
         "type": "Point",
@@ -87,7 +92,8 @@
       "properties": {
         "title": "Amalfi Coast, Italy",
         "description": "Dramatic coastline, colorful villages, and delicious cuisine",
-        "link": "https://thehoneymoonedit.com/wp-content/uploads/2023/04/Amalfi-shutterstock_759048703.jpg.webp"
+        "link": "https://thehoneymoonedit.com/wp-content/uploads/2023/04/Amalfi-shutterstock_759048703.jpg.webp",
+        "county_code": "IT"
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +109,8 @@
       "properties": {
         "title": "Seychelles",
         "description": "Pristine beaches, crystal-clear waters, and luxurious resorts",
-        "link": "https://cdn0.hitched.co.uk/article/3422/original/1280/jpg/42243-Seychelles-honeymoon-guide-beach-b9c34e0.jpeg"
+        "link": "https://cdn0.hitched.co.uk/article/3422/original/1280/jpg/42243-Seychelles-honeymoon-guide-beach-b9c34e0.jpeg",
+        "county_code": "SC"
       },
       "geometry": {
         "type": "Point",
@@ -119,7 +126,8 @@
       "properties": {
         "title": "Tahiti and Bora Bora, French Polynesia",
         "description": "Breathtaking scenery, overwater bungalows, and vibrant marine life",
-        "link": "https://www.holidaysforcouples.travel/wp-content/uploads/2023/09/Bora-Bora-French-Polynesia-with-crystal-clear-waters-and-overwater-bungalows-dotting-the-shoreline-scaled-1.jpg"
+        "link": "https://www.holidaysforcouples.travel/wp-content/uploads/2023/09/Bora-Bora-French-Polynesia-with-crystal-clear-waters-and-overwater-bungalows-dotting-the-shoreline-scaled-1.jpg",
+        "county_code": "PF"
       },
       "geometry": {
         "type": "Point",
@@ -135,7 +143,8 @@
       "properties": {
         "title": "Kyoto, Japan",
         "description": "Stunning temples, serene gardens, and traditional ryokan accommodations",
-        "link": "https://thehoneymoonedit.com/wp-content/uploads/2022/10/Himeji-Japan-at-Himeji-Castle-shutterstock_776445706-728x546.jpg"
+        "link": "https://thehoneymoonedit.com/wp-content/uploads/2022/10/Himeji-Japan-at-Himeji-Castle-shutterstock_776445706-728x546.jpg",
+        "county_code": "JP"
       },
       "geometry": {
         "type": "Point",
@@ -151,7 +160,8 @@
       "properties": {
         "title": "Costa Rica",
         "description": "Lush rainforests, pristine beaches, and diverse wildlife",
-        "link": "https://timbuktutravel.imgix.net/2022/10/costa-rica-honeymoon-nayara-tented-camp.png?auto=compress%2Cformat&fit=scale&h=600&ixlib=php-1.1.0&q=50&w=900&wpsize=large"
+        "link": "https://timbuktutravel.imgix.net/2022/10/costa-rica-honeymoon-nayara-tented-camp.png?auto=compress%2Cformat&fit=scale&h=600&ixlib=php-1.1.0&q=50&w=900&wpsize=large",
+        "county_code": "CR"
       },
       "geometry": {
         "type": "Point",
@@ -167,7 +177,8 @@
       "properties": {
         "title": "Santorini, Greece",
         "description": "Famous for its picturesque white-washed buildings, cliffside views, and romantic ambiance",
-        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg"
+        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg",
+        "county_code": "GR"
       },
       "geometry": {
         "type": "Point",
@@ -183,7 +194,8 @@
       "properties": {
         "title": "Banff, Canada",
         "description": "Stunning mountain scenery, crystal-clear lakes, and outdoor adventures",
-        "link": "https://cdn0.weddingwire.ca/article-vendor-o/5473/original/1280/jpg/fairmont-banff-springs-willow-stream-spa-outdoor-hot-tub-winter_50_5473.jpeg"
+        "link": "https://cdn0.weddingwire.ca/article-vendor-o/5473/original/1280/jpg/fairmont-banff-springs-willow-stream-spa-outdoor-hot-tub-winter_50_5473.jpeg",
+        "county_code": "CA"
       },
       "geometry": {
         "type": "Point",
@@ -199,7 +211,8 @@
       "properties": {
         "title": "Queenstown, New Zealand",
         "description": "Adventurous activities, breathtaking landscapes, and charming alpine villages",
-        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKbmCHaBtyQZ66XWIxNJ53w5-sifPeR7xLg&usqp=CAU"
+        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKbmCHaBtyQZ66XWIxNJ53w5-sifPeR7xLg&usqp=CAU",
+        "county_code": "NZ"
       },
       "geometry": {
         "type": "Point",
@@ -215,7 +228,8 @@
       "properties": {
         "title": "Cape Town, South Africa",
         "description": "Beautiful beaches, stunning landscapes, and vibrant culture",
-        "link": "https://www.hlimg.com/images/stories/738X538/6_1535711797m.jpg"
+        "link": "https://www.hlimg.com/images/stories/738X538/6_1535711797m.jpg",
+        "county_code": "ZA"
       },
       "geometry": {
         "type": "Point",
@@ -231,7 +245,8 @@
       "properties": {
         "title": "Venice, Italy",
         "description": "Romantic canals, historic architecture, and delicious cuisine",
-        "link": "https://www.arabiaweddings.com/sites/default/files/styles/max980/public/articles/2019/08/venice_italy_grand_canal.jpg?itok=dIVTjRMU"
+        "link": "https://www.arabiaweddings.com/sites/default/files/styles/max980/public/articles/2019/08/venice_italy_grand_canal.jpg?itok=dIVTjRMU",
+        "county_code": "IT"
       },
       "geometry": {
         "type": "Point",
@@ -247,7 +262,8 @@
       "properties": {
         "title": "Fiji",
         "description": "Idyllic beaches, crystal-clear waters, and friendly locals",
-        "link": "https://www.downunderendeavours.com/wp-content/uploads/2017/09/PP-likuliku-900x600-aerial-through-palm-trees-015-pano-signature.jpg"
+        "link": "https://www.downunderendeavours.com/wp-content/uploads/2017/09/PP-likuliku-900x600-aerial-through-palm-trees-015-pano-signature.jpg",
+        "county_code": "FJ"
       },
       "geometry": {
         "type": "Point",
@@ -263,7 +279,8 @@
       "properties": {
         "title": "Sedona, USA",
         "description": "Red rock formations, spiritual energy, and luxurious spas",
-        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrp8Xg_zpWMEQnRGosR9BDHmMOho-qRjnfJw&usqp=CAU"
+        "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrp8Xg_zpWMEQnRGosR9BDHmMOho-qRjnfJw&usqp=CAU",
+        "county_code": "US"
       },
       "geometry": {
         "type": "Point",
@@ -279,7 +296,8 @@
       "properties": {
         "title": "Dubrovnik, Croatia",
         "description": "Medieval architecture, crystal-clear waters, and charming streets",
-        "link": "https://unforgettablecroatia.com/wp-content/uploads/2021/07/Dubrovnik-900x550-1.jpg"
+        "link": "https://unforgettablecroatia.com/wp-content/uploads/2021/07/Dubrovnik-900x550-1.jpg",
+        "county_code": "HR"
       },
       "geometry": {
         "type": "Point",
@@ -295,7 +313,8 @@
       "properties": {
         "title": "Maui, Hawaii",
         "description": "Stunning beaches, lush landscapes, and scenic drives",
-        "link": "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-0,0000-1600,0000-900,0000/publish/content/dam/fourseasons/images/web/MAU/MAU_676_aspect16x9.jpg"
+        "link": "https://www.fourseasons.com/alt/img-opt/~70.1530.0,0000-0,0000-1600,0000-900,0000/publish/content/dam/fourseasons/images/web/MAU/MAU_676_aspect16x9.jpg",
+        "county_code": "US"
       },
       "geometry": {
         "type": "Point",
@@ -311,7 +330,8 @@
       "properties": {
         "title": "Dubai, United Arab Emirates",
         "description": "Luxurious accommodations, futuristic architecture, and desert adventures",
-        "link": "https://media-cdn.tripadvisor.com/media/photo-s/1b/90/18/f0/the-ritz-carlton-dubai.jpg"
+        "link": "https://media-cdn.tripadvisor.com/media/photo-s/1b/90/18/f0/the-ritz-carlton-dubai.jpg",
+        "county_code": "AE"
       },
       "geometry": {
         "type": "Point",
@@ -327,12 +347,13 @@
       "properties": {
         "title": "Rotorua, New Zealand",
         "description": "Geothermal wonders, Maori culture, and adventurous activities",
-        "link": "https://nzpocketguide.com/wp-content/uploads/2020/09/Lake-Spa-Polynesian-Spa-CREDIT-Polynesian-Spa-Feature-Mandatory-Credit-Destination-Rotorua-2-1024x683.jpg"
+        "link": "https://nzpocketguide.com/wp-content/uploads/2020/09/Lake-Spa-Polynesian-Spa-CREDIT-Polynesian-Spa-Feature-Mandatory-Credit-Destination-Rotorua-2-1024x683.jpg",
+        "county_code": "NZ"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          176.2509,
+          176.2508,
           -38.1368
         ]
       }
@@ -343,7 +364,8 @@
       "properties": {
         "title": "Hallstatt, Austria",
         "description": "Quaint village nestled by a pristine lake, surrounded by Alps",
-        "link": "https://cdn.vietlongtravel.com/wp-content/uploads/2015/01/ECOLODGE-RESORT.jpg?strip=all&lossy=1&resize=940%2C627&ssl=1"
+        "link": "https://cdn.vietlongtravel.com/wp-content/uploads/2015/01/ECOLODGE-RESORT.jpg?strip=all&lossy=1&resize=940%2C627&ssl=1",
+        "county_code": "AT"
       },
       "geometry": {
         "type": "Point",
@@ -359,7 +381,8 @@
       "properties": {
         "title": "Sapa, Vietnam",
         "description": "Breathtaking mountain landscapes, vibrant hill-tribe culture, and trekking adventures",
-        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg"
+        "link": "https://theplunge.com/wp-content/uploads/2020/02/Santorini-Honeymoon.jpg",
+        "county_code": "VN"
       },
       "geometry": {
         "type": "Point",
@@ -375,7 +398,8 @@
       "properties": {
         "title": "Iceland",
         "description": "Spectacular natural wonders including waterfalls, glaciers, and geysers",
-        "link": "https://theplunge.com/wp-content/uploads/2018/10/Iceland-header-image.jpg"
+        "link": "https://theplunge.com/wp-content/uploads/2018/10/Iceland-header-image.jpg",
+        "county_code": "IS"
       },
       "geometry": {
         "type": "Point",
@@ -391,7 +415,8 @@
       "properties": {
         "title": "Portofino, Italy",
         "description": "Charming fishing village with colorful buildings, scenic harbor, and Italian Riviera charm",
-        "link": "https://www.theknot.com/tk-media/images/1541e75b-58b6-4bca-9195-ed20c59f5036"
+        "link": "https://www.theknot.com/tk-media/images/1541e75b-58b6-4bca-9195-ed20c59f5036",
+        "county_code": "IT"
       },
       "geometry": {
         "type": "Point",
@@ -407,7 +432,8 @@
       "properties": {
         "title": "Cappadocia, Turkey",
         "description": "Surreal landscape of fairy chimneys, ancient cave dwellings, and hot air balloon rides",
-        "link": "https://thehoneymoonedit.com/wp-content/uploads/2022/12/Cappadocia-Central-AnatoliaTurkey-shutterstock_2048861867-728x546.jpg.webp"
+        "link": "https://thehoneymoonedit.com/wp-content/uploads/2022/12/Cappadocia-Central-AnatoliaTurkey-shutterstock_2048861867-728x546.jpg.webp",
+        "county_code": "TR"
       },
       "geometry": {
         "type": "Point",
@@ -423,7 +449,8 @@
       "properties": {
         "title": "Zanzibar, Tanzania",
         "description": "Exotic blend of historic Stone Town, pristine beaches, and spice plantations",
-        "link": "https://www.i-escape.com/blog/wp-content/uploads/2016/03/Our-Tanzania-honeymoon-tips.jpg"
+        "link": "https://www.i-escape.com/blog/wp-content/uploads/2016/03/Our-Tanzania-honeymoon-tips.jpg",
+        "county_code": "TZ"
       },
       "geometry": {
         "type": "Point",
@@ -439,7 +466,8 @@
       "properties": {
         "title": "Patagonia, Chile",
         "description": "Untamed wilderness with glaciers, fjords, and breathtaking landscapes",
-        "link": "https://honeymoons.com/wp-content/uploads/2020/08/ecocamp-patagonia-900x500.jpg"
+        "link": "https://honeymoons.com/wp-content/uploads/2020/08/ecocamp-patagonia-900x500.jpg",
+        "county_code": "CL"
       },
       "geometry": {
         "type": "Point",
@@ -455,7 +483,8 @@
       "properties": {
         "title": "Lofoten Islands, Norway",
         "description": "Scenic archipelago with dramatic mountains, picturesque fishing villages, and Northern Lights",
-        "link": "https://res.cloudinary.com/gofjords-com/images/w_2560,h_1374,c_scale/f_webp,q_auto:eco/v1633343854/Blog%20Content/Lofoten/Visit%20Lofoten%20in%20the%20winter%20time/Reine-winter-time-Lofoten-Islands-Mumemories/Reine-winter-time-Lofoten-Islands-Mumemories.jpg?_i=AA"
+        "link": "https://res.cloudinary.com/gofjords-com/images/w_2560,h_1374,c_scale/f_webp,q_auto:eco/v1633343854/Blog%20Content/Lofoten/Visit%20Lofoten%20in%20the%20winter%20time/Reine-winter-time-Lofoten-Islands-Mumemories/Reine-winter-time-Lofoten-Islands-Mumemories.jpg?_i=AA",
+        "county_code": "NO"
       },
       "geometry": {
         "type": "Point",
@@ -467,3 +496,4 @@
     }
   ]
 }
+

@@ -1,0 +1,263 @@
+{
+    "1": {
+        "weather_description": "Tropical monsoon climate. Hot and humid with a wet season from April to October and a dry season from November to March.",
+        "hotel_prices": {
+            "3_star": 120,
+            "4_star": 200,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "2": {
+        "weather_description": "Mediterranean climate. Mild, wet winters and hot, dry summers.",
+        "hotel_prices": {
+            "3_star": 80,
+            "4_star": 150,
+            "5_star": 250
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "3": {
+        "weather_description": "Varied climate. Generally temperate in the north and west, but mild winters and hot summers in the Mediterranean south.",
+        "hotel_prices": {
+            "3_star": 90,
+            "4_star": 160,
+            "5_star": 280
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "4": {
+        "weather_description": "Varies from temperate in Alaska to tropical in Hawaii. Continental climate in the interior.",
+        "hotel_prices": {
+            "3_star": 150,
+            "4_star": 250,
+            "5_star": 400
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "5": {
+        "weather_description": "Tropical climate. Warm and humid all year round with distinct wet and dry seasons.",
+        "hotel_prices": {
+            "3_star": 50,
+            "4_star": 100,
+            "5_star": 200
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "6": {
+        "weather_description": "Mediterranean climate. Mild winters and hot summers.",
+        "hotel_prices": {
+            "3_star": 100,
+            "4_star": 180,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "7": {
+        "weather_description": "Tropical climate. Hot and humid with a rainy season from November to March.",
+        "hotel_prices": {
+            "3_star": 140,
+            "4_star": 220,
+            "5_star": 350
+        },
+        "peak_tourist_months": ["April", "May", "June"]
+    },
+    "8": {
+        "weather_description": "Tropical climate. Warm temperatures year-round with high humidity.",
+        "hotel_prices": {
+            "3_star": 160,
+            "4_star": 250,
+            "5_star": 400
+        },
+        "peak_tourist_months": ["May", "June", "July"]
+    },
+    "9": {
+        "weather_description": "Varies from temperate in the north to subtropical in the south. Hot and humid summers.",
+        "hotel_prices": {
+            "3_star": 110,
+            "4_star": 200,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "10": {
+        "weather_description": "Tropical climate along the coast, temperate inland. Rainy season from May to November.",
+        "hotel_prices": {
+            "3_star": 80,
+            "4_star": 150,
+            "5_star": 250
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "11": {
+        "weather_description": "Mediterranean climate. Mild, wet winters and hot, dry summers.",
+        "hotel_prices": {
+            "3_star": 80,
+            "4_star": 150,
+            "5_star": 250
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "12": {
+        "weather_description": "Varied climate. Cool in the north, moderate in the south. Cold winters in the interior.",
+        "hotel_prices": {
+            "3_star": 120,
+            "4_star": 200,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "13": {
+        "weather_description": "Varies from temperate in the south to subtropical in the north. Mild winters and warm summers.",
+        "hotel_prices": {
+            "3_star": 100,
+            "4_star": 180,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "14": {
+        "weather_description": "Varied climate. Warm summers and cool winters in the north, mild temperatures year-round in the south.",
+        "hotel_prices": {
+            "3_star": 70,
+            "4_star": 130,
+            "5_star": 220
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "15": {
+        "weather_description": "Mediterranean climate. Mild winters and hot summers.",
+        "hotel_prices": {
+            "3_star": 100,
+            "4_star": 180,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "16": {
+        "weather_description": "Tropical marine climate. Warm and humid year-round.",
+        "hotel_prices": {
+            "3_star": 90,
+            "4_star": 160,
+            "5_star": 280
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "17": {
+        "weather_description": "Varies from temperate in Alaska to tropical in Hawaii. Continental climate in the interior.",
+        "hotel_prices": {
+            "3_star": 150,
+            "4_star": 250,
+            "5_star": 400
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "18": {
+        "weather_description": "Varied climate. Mediterranean along the coast and continental inland. Hot summers and mild winters.",
+        "hotel_prices": {
+            "3_star": 90,
+            "4_star": 160,
+            "5_star": 280
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "19": {
+        "weather_description": "Varies from temperate in Alaska to tropical in Hawaii. Continental climate in the interior.",
+        "hotel_prices": {
+            "3_star": 150,
+            "4_star": 250,
+            "5_star": 400
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "20": {
+        "weather_description": "Desert climate. Hot summers and warm winters.",
+        "hotel_prices": {
+            "3_star": 200,
+            "4_star": 350,
+            "5_star": 500
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "21": {
+        "weather_description": "Varied climate. Temperate in the south, subtropical in the north. Mild winters and warm summers.",
+        "hotel_prices": {
+            "3_star": 100,
+            "4_star": 180,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "22": {
+        "weather_description": "Varied climate. Continental in the east and alpine in the west. Warm summers and cold winters.",
+        "hotel_prices": {
+            "3_star": 110,
+            "4_star": 200,
+            "5_star": 320
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "23": {
+        "weather_description": "Tropical climate. Hot and humid with a monsoon season from May to October.",
+        "hotel_prices": {
+            "3_star": 60,
+            "4_star": 120,
+            "5_star": 220
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "24": {
+        "weather_description": "Subarctic climate. Cool summers and cold winters.",
+        "hotel_prices": {
+            "3_star": 130,
+            "4_star": 220,
+            "5_star": 350
+        },
+        "peak_tourist_months": ["July", "August"]
+    },
+    "25": {
+        "weather_description": "Mediterranean climate. Mild winters and hot summers.",
+        "hotel_prices": {
+            "3_star": 100,
+            "4_star": 180,
+            "5_star": 300
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "26": {
+        "weather_description": "Varies from temperate in the north to Mediterranean in the south. Hot summers and mild winters.",
+        "hotel_prices": {
+            "3_star": 70,
+            "4_star": 140,
+            "5_star": 240
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "27": {
+        "weather_description": "Varied climate. Coastal areas are hot and humid, while the interior is cooler. Rainy season from November to April.",
+        "hotel_prices": {
+            "3_star": 80,
+            "4_star": 150,
+            "5_star": 250
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    },
+    "28": {
+        "weather_description": "Varied climate. Desert in the north, Mediterranean along the coast, and temperate in the south. Dry summers and wet winters.",
+        "hotel_prices": {
+            "3_star": 90,
+            "4_star": 170,
+            "5_star": 280
+        },
+        "peak_tourist_months": ["December", "January", "February"]
+    },
+    "29": {
+        "weather_description": "Varied climate. Coastal regions are temperate, while inland areas are colder. Rainy season from October to April.",
+        "hotel_prices": {
+            "3_star": 110,
+            "4_star": 190,
+            "5_star": 320
+        },
+        "peak_tourist_months": ["June", "July", "August"]
+    }
+}

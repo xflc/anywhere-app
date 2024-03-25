@@ -13,6 +13,8 @@ import * as THREE from 'three';
 import ReactDOMServer from 'react-dom/server';
 import PopupCard from './components/PopupCard'; // Path to your PopupMessage component
 import 'mapbox-gl/dist/mapbox-gl.css';
+import placesBoundingBoxes from './places_bounding_boxes.json';
+import Leftbar from './Leftbar';
 
 function App() {
   const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState(false);
@@ -206,7 +208,9 @@ function App() {
           );
           map.on('click', 'places_circles', function (e) {
             setSelectedPin(e.features[0]);
-            fetchFlights(e.features[0].id);
+            //fetchFlights(e.features[0].id);
+            //map.flyTo({center: e.features[0].geometry.coordinates, zoom:10});
+            map.fitBounds(placesBoundingBoxes[e.features[0].properties.county_code][1])
           });
           //Create a popup, but don't add it to the map yet.
           const popup = new mapboxgl.Popup({
@@ -226,7 +230,6 @@ function App() {
 
             // Copy coordinates array.
             const coordinates = e.features[0].geometry.coordinates.slice();
-            const description = e.features[0].properties.description;
 
             // Ensure that if the map is zoomed out such that multiple
             // copies of the feature are visible, the popup appears
@@ -236,7 +239,6 @@ function App() {
             }
 
             // Render popup message using React component.
-            const formattedDate = 'Some formatted date'; // Replace with your date formatting logic
             const popupContent = ReactDOMServer.renderToStaticMarkup(
               <PopupCard place={e} />
             );
@@ -340,9 +342,7 @@ function App() {
 
   }, [startDate, endDate]); // Trigger effect when startDate or endDate changes
 
-  const rgbToHex = (rgb) => {
-    return `0x${rgb.map(channel => channel.toString(16).padStart(2, '0')).join('')}`;
-  };
+
   // Function to determine color gradient based on price
   const getColorByPrice = (price) => {
     try {
@@ -478,7 +478,7 @@ function App() {
       <div className="w-full z-40 flex flex-wrap items-center justify-between mx-auto p-4  bg-white border-white">
         <div id='logo' className="logo flex flex-col items-center px-8">
           <span className="logo-text font-[Glendale] text-[21px] font-bold text-black">ANYWHERE</span>
-          <span className="logo-sub-text font-[Gilroy] text-[13px] text-black">By GPTur</span>
+          <span className="logo-sub-text font-[Gilroy] text-[13px] text-black m-[-5px]">By GPTur</span>
         </div>
         <div className="Frame7 h-16 justify-start items-center gap-6 inline-flex">
           <div className="Sitio p-2.5 bg-neutral-100 rounded-2xl border border-neutral-200 justify-start items-center gap-2.5 flex">
@@ -516,7 +516,8 @@ function App() {
 
         <div className="flex-1 bg-white h-full">
           <div className='relative w-[100%] h-[100%] z-10' id="map" >
-            <div id='left-bar' className={`w-1/4 absolute left-0 top-0 bg-gray-200 h-full z-10 ${leftSidebarCollapsed ? 'hidden' : ''}`}>
+            <div id='left-bar' className={`w-1/4 absolute left-0 top-0 bg-gray-200 h-full z-10 overflow-auto ${leftSidebarCollapsed ? 'hidden' : ''}`}>
+              <Leftbar id={selectedPin}></Leftbar>
               <div className='w-8 absolute left-[100%] z-60'>
                 <ChevronDoubleLeftIcon onClick={toggleLeftSidebar}>Toggle Right Sidebar</ChevronDoubleLeftIcon>
               </div>

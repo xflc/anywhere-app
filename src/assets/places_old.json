@@ -1,0 +1,372 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "1",
+      "type": "Feature",
+      "properties": {
+        "title": "Maldives",
+        "description": "Known for its stunning overwater bungalows, clear blue waters, and romantic sunsets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.5434, 3.2028]
+      }
+    },
+    {
+      "id": "2",
+      "type": "Feature",
+      "properties": {
+        "title": "Santorini, Greece",
+        "description": "Famous for its picturesque white-washed buildings, cliffside views, and romantic ambiance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.4284, 36.3932]
+      }
+    },
+    {
+      "id": "3",
+      "type": "Feature",
+      "properties": {
+        "title": "Paris, France",
+        "description": "The City of Love with its iconic landmarks, charming streets, and world-class cuisine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3522, 48.8566]
+      }
+    },
+    {
+      "id": "4",
+      "type": "Feature",
+      "properties": {
+        "title": "Hawaii, USA",
+        "description": "Diverse landscapes, beautiful beaches, and opportunities for adventure"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.8583, 21.3069]
+      }
+    },
+    {
+      "id": "5",
+      "type": "Feature",
+      "properties": {
+        "title": "Bali, Indonesia",
+        "description": "Lush landscapes, stunning beaches, rich culture, and luxurious resorts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.1889, -8.4095]
+      }
+    },
+    {
+      "id": "6",
+      "type": "Feature",
+      "properties": {
+        "title": "Amalfi Coast, Italy",
+        "description": "Dramatic coastline, colorful villages, and delicious cuisine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [14.6119, 40.6340]
+      }
+    },
+    {
+      "id": "7",
+      "type": "Feature",
+      "properties": {
+        "title": "Seychelles",
+        "description": "Pristine beaches, crystal-clear waters, and luxurious resorts"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [55.4915, -4.6796]
+      }
+    },
+    {
+      "id": "8",
+      "type": "Feature",
+      "properties": {
+        "title": "Tahiti and Bora Bora, French Polynesia",
+        "description": "Breathtaking scenery, overwater bungalows, and vibrant marine life"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-149.4068, -17.6797]
+      }
+    },
+    {
+      "id": "9",
+      "type": "Feature",
+      "properties": {
+        "title": "Kyoto, Japan",
+        "description": "Stunning temples, serene gardens, and traditional ryokan accommodations"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [135.7681, 35.0116]
+      }
+    },
+    {
+      "id": "10",
+      "type": "Feature",
+      "properties": {
+        "title": "Costa Rica",
+        "description": "Lush rainforests, pristine beaches, and diverse wildlife"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.7534, 9.7489]
+      }
+    },
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "id": "11",
+          "type": "Feature",
+          "properties": {
+            "title": "Santorini, Greece",
+            "description": "Famous for its picturesque white-washed buildings, cliffside views, and romantic ambiance"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [25.4284, 36.3932]
+          }
+        },
+        {
+          "id": "12",
+          "type": "Feature",
+          "properties": {
+            "title": "Banff, Canada",
+            "description": "Stunning mountain scenery, crystal-clear lakes, and outdoor adventures"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-115.5624, 51.1784]
+          }
+        },
+        {
+          "id": "13",
+          "type": "Feature",
+          "properties": {
+            "title": "Queenstown, New Zealand",
+            "description": "Adventurous activities, breathtaking landscapes, and charming alpine villages"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [168.6626, -45.0312]
+          }
+        },
+        {
+          "id": "14",
+          "type": "Feature",
+          "properties": {
+            "title": "Cape Town, South Africa",
+            "description": "Beautiful beaches, stunning landscapes, and vibrant culture"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [18.4241, -33.9249]
+          }
+        },
+        {
+          "id": "15",
+          "type": "Feature",
+          "properties": {
+            "title": "Venice, Italy",
+            "description": "Romantic canals, historic architecture, and delicious cuisine"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [12.3155, 45.4408]
+          }
+        },
+        {
+          "id": "16",
+          "type": "Feature",
+          "properties": {
+            "title": "Fiji",
+            "description": "Idyllic beaches, crystal-clear waters, and friendly locals"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [178.0650, -17.7134]
+          }
+        },
+        {
+          "id": "17",
+          "type": "Feature",
+          "properties": {
+            "title": "Sedona, USA",
+            "description": "Red rock formations, spiritual energy, and luxurious spas"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-111.7890, 34.8697]
+          }
+        },
+        {
+          "id": "18",
+          "type": "Feature",
+          "properties": {
+            "title": "Dubrovnik, Croatia",
+            "description": "Medieval architecture, crystal-clear waters, and charming streets"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [18.1100, 42.6507]
+          }
+        },
+        {
+          "id": "19",
+          "type": "Feature",
+          "properties": {
+            "title": "Maui, Hawaii",
+            "description": "Stunning beaches, lush landscapes, and scenic drives"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-156.5047, 20.7984]
+          }
+        },
+        {
+          "id": "20",
+          "type": "Feature",
+          "properties": {
+            "title": "Dubai, United Arab Emirates",
+            "description": "Luxurious accommodations, futuristic architecture, and desert adventures"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [55.2708, 25.2048]
+          }
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "type": "Feature",
+      "properties": {
+        "title": "Rotorua, New Zealand",
+        "description": "Geothermal wonders, Maori culture, and adventurous activities"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [176.2509, -38.1368]
+      }
+    },
+    {
+      "id": "22",
+      "type": "Feature",
+      "properties": {
+        "title": "Hallstatt, Austria",
+        "description": "Quaint village nestled by a pristine lake, surrounded by Alps"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.6509, 47.5622]
+      }
+    },
+    {
+      "id": "23",
+      "type": "Feature",
+      "properties": {
+        "title": "Sapa, Vietnam",
+        "description": "Breathtaking mountain landscapes, vibrant hill-tribe culture, and trekking adventures"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.8448, 22.3365]
+      }
+    },
+    {
+      "id": "24",
+      "type": "Feature",
+      "properties": {
+        "title": "Iceland",
+        "description": "Spectacular natural wonders including waterfalls, glaciers, and geysers"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-18.6200, 64.9631]
+      }
+    },
+    {
+      "id": "25",
+      "type": "Feature",
+      "properties": {
+        "title": "Portofino, Italy",
+        "description": "Charming fishing village with colorful buildings, scenic harbor, and Italian Riviera charm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [9.2067, 44.3083]
+      }
+    },
+    {
+      "id": "26",
+      "type": "Feature",
+      "properties": {
+        "title": "Cappadocia, Turkey",
+        "description": "Surreal landscape of fairy chimneys, ancient cave dwellings, and hot air balloon rides"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.8357, 38.6431]
+      }
+    },
+    {
+      "id": "27",
+      "type": "Feature",
+      "properties": {
+        "title": "Zanzibar, Tanzania",
+        "description": "Exotic blend of historic Stone Town, pristine beaches, and spice plantations"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [39.2026, -6.1659]
+      }
+    },
+    {
+      "id": "28",
+      "type": "Feature",
+      "properties": {
+        "title": "Banff, Canada",
+        "description": "Picturesque town surrounded by Banff National Park's stunning mountain scenery and wildlife"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-115.5683, 51.1784]
+      }
+    },
+    {
+      "id": "29",
+      "type": "Feature",
+      "properties": {
+        "title": "Patagonia, Chile",
+        "description": "Untamed wilderness with glaciers, fjords, and breathtaking landscapes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.0833, -51.6784]
+      }
+    },
+    {
+      "id": "30",
+      "type": "Feature",
+      "properties": {
+        "title": "Lofoten Islands, Norway",
+        "description": "Scenic archipelago with dramatic mountains, picturesque fishing villages, and Northern Lights"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.1858, 68.3436]
+      }
+    }
+    
+    
+  ]
+}

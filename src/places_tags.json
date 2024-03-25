@@ -1,0 +1,952 @@
+{
+    "1": {
+        "country_name": "Maldives",
+        "county_code": "MV",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Luxury"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Romance",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Overwater Bungalows",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Spa & Wellness",
+            "Photography"
+        ]
+    },
+    "2": {
+        "country_name": "Greece",
+        "county_code": "GR",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "3": {
+        "country_name": "France",
+        "county_code": "FR",
+        "destination_tags": [
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Gourmet",
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "4": {
+        "country_name": "United States",
+        "county_code": "US",
+        "destination_tags": [
+            "Mountain",
+            "Desert",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography",
+            "Adventure Sports"
+        ]
+    },
+    "5": {
+        "country_name": "Indonesia",
+        "county_code": "ID",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Rainforest"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography",
+            "Adventure Sports"
+        ]
+    },
+    "6": {
+        "country_name": "Italy",
+        "county_code": "IT",
+        "destination_tags": [
+            "City",
+            "Countryside",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Gourmet",
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "7": {
+        "country_name": "Seychelles",
+        "county_code": "SC",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Luxury"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Romance",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Overwater Bungalows",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Spa & Wellness",
+            "Photography"
+        ]
+    },
+    "8": {
+        "country_name": "French Polynesia",
+        "county_code": "PF",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Luxury"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Romance",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Overwater Bungalows",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Spa & Wellness",
+            "Photography"
+        ]
+    },
+    "9": {
+        "country_name": "Japan",
+        "county_code": "JP",
+        "destination_tags": [
+            "City",
+            "Countryside",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet",
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "10": {
+        "country_name": "Costa Rica",
+        "county_code": "CR",
+        "destination_tags": [
+            "Beach",
+            "Rainforest"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Adventure Sports"
+        ]
+    },
+    "11": {
+        "country_name": "Greece",
+        "county_code": "GR",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique Hotels",
+            "Luxury Resorts"
+        ],
+        "cuisine_tags": [
+            "Local Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "12": {
+        "country_name": "Canada",
+        "county_code": "CA",
+        "destination_tags": [
+            "Mountain",
+            "Countryside",
+            "Wildlife"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Adventure_Sports"
+        ]
+    },
+    "13": {
+        "country_name": "New Zealand",
+        "county_code": "NZ",
+        "destination_tags": [
+            "Mountain",
+            "Beach",
+            "Adventure"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Adventure_Sports"
+        ]
+    },
+    "14": {
+        "country_name": "South Africa",
+        "county_code": "ZA",
+        "destination_tags": [
+            "Beach",
+            "Safari",
+            "Wildlife"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Luxury_Resorts",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "15": {
+        "country_name": "Italy",
+        "county_code": "IT",
+        "destination_tags": [
+            "Beach",
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Romance"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels",
+            "Luxury_Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet",
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Photography",
+            "Romance"
+        ]
+    },
+    "16": {
+        "country_name": "Fiji",
+        "county_code": "FJ",
+        "destination_tags": [
+            "Beach",
+            "Island",
+            "Luxury"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Romance",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Overwater_Bungalows",
+            "Luxury_Resorts"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Spa_&_Wellness"
+        ]
+    },
+    "17": {
+        "country_name": "United States",
+        "county_code": "US",
+        "destination_tags": [
+            "City",
+            "Beach",
+            "Mountain"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Adventure_Sports",
+            "Photography"
+        ]
+    },
+    "18": {
+        "country_name": "Croatia",
+        "county_code": "HR",
+        "destination_tags": [
+            "Beach",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "19": {
+        "country_name": "United States",
+        "county_code": "US",
+        "destination_tags": [
+            "Beach",
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "20": {
+        "country_name": "United Arab Emirates",
+        "county_code": "AE",
+        "destination_tags": [
+            "City",
+            "Desert",
+            "Luxury"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Luxury_Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Adventure_Sports"
+        ]
+    },
+    "21": {
+        "country_name": "New Zealand",
+        "county_code": "NZ",
+        "destination_tags": [
+            "Mountain",
+            "Beach",
+            "Adventure"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Relaxation",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Adventure_Sports"
+        ]
+    },
+    "22": {
+        "country_name": "Austria",
+        "county_code": "AT",
+        "destination_tags": [
+            "Mountain",
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "23": {
+        "country_name": "Vietnam",
+        "county_code": "VN",
+        "destination_tags": [
+            "Beach",
+            "City",
+            "Countryside"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels",
+            "Eco-Friendly"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "24": {
+        "country_name": "Iceland",
+        "county_code": "IS",
+        "destination_tags": [
+            "Mountain",
+            "Northern Lights",
+            "Adventure"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Arctic/Antarctic"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "25": {
+        "country_name": "Italy",
+        "county_code": "IT",
+        "destination_tags": [
+            "Beach",
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural",
+            "Romance"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels",
+            "Luxury_Resorts"
+        ],
+        "cuisine_tags": [
+            "Gourmet",
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Photography",
+            "Romance"
+        ]
+    },
+    "26": {
+        "country_name": "Turkey",
+        "county_code": "TR",
+        "destination_tags": [
+            "Beach",
+            "City",
+            "Historic"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Cultural"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "27": {
+        "country_name": "Tanzania",
+        "county_code": "TZ",
+        "destination_tags": [
+            "Beach",
+            "Safari",
+            "Wildlife"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Wildlife"
+        ],
+        "climate_tags": [
+            "Tropical"
+        ],
+        "accommodation_tags": [
+            "Luxury_Resorts"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Remote"
+        ],
+        "budget_tags": [
+            "Luxury"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "28": {
+        "country_name": "Chile",
+        "county_code": "CL",
+        "destination_tags": [
+            "Mountain",
+            "Desert",
+            "Adventure"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    },
+    "29": {
+        "country_name": "Norway",
+        "county_code": "NO",
+        "destination_tags": [
+            "Mountain",
+            "Northern Lights",
+            "Adventure"
+        ],
+        "activity_tags": [
+            "Adventure",
+            "Photography"
+        ],
+        "climate_tags": [
+            "Temperate"
+        ],
+        "accommodation_tags": [
+            "Boutique_Hotels"
+        ],
+        "cuisine_tags": [
+            "Local_Cuisine"
+        ],
+        "accessibility_tags": [
+            "Easily_Accessible"
+        ],
+        "budget_tags": [
+            "Budget-Friendly"
+        ],
+        "special_interests_tags": [
+            "Photography"
+        ]
+    }
+}

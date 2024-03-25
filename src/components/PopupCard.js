@@ -13,3 +13,4 @@ const PopupCard = ({ place }) => {
   
 
 export default PopupCard;
+
